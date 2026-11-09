@@ -1,0 +1,27 @@
+CARTES SÉNIA · BOUTLÉLIS - version protégée par mot de passe
+
+Les 3 cartes et toutes les données sont CHIFFRÉES dans index.html (AES-256).
+Sans le mot de passe, le fichier ne contient rien de lisible. Le mot de passe n'est écrit
+dans aucun fichier : communiquez-le séparément aux personnes autorisées.
+
+Contenu
+  index.html            page de connexion + cartes chiffrées
+  manifest.json, sw.js  application installable et fonctionnement sans réseau
+  icon-*.png            icônes
+
+Utilisation
+  - À l'ouverture, l'application demande le mot de passe, puis affiche les cartes.
+  - Le mot de passe est redemandé à chaque ouverture de l'application.
+
+Publier (GitHub Pages) - voir les étapes de la première version :
+  1. Dépôt GitHub > Add file > Upload files : envoyez TOUS les fichiers de ce dossier.
+  2. Settings > Pages > branche « main », dossier « / (root) ».
+  3. Ouvrez l'adresse dans Chrome > menu ⋮ > « Installer l'application ».
+  Même si le dépôt est public, les cartes restent illisibles sans le mot de passe.
+
+Bon à savoir
+  - Choisissez un mot de passe long et ne l'envoyez pas avec le fichier.
+  - Si une personne quitte l'équipe, changez le mot de passe : il faut régénérer index.html
+    (demandez-le), puis remplacer le fichier sur GitHub et passer sw.js à 'cartes-senia-v2'.
+  - Une personne qui connaît le mot de passe peut copier les cartes : le chiffrement protège
+    contre l'accès non autorisé, pas contre un utilisateur autorisé.
